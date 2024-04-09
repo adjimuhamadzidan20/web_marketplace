@@ -1,0 +1,49 @@
+.hidden .hideit .sembunyi {
+    display: none;
+}
+
+.debug {
+    background-color: rgb(255, 255, 0);
+    font-family: consolas;
+    font-size: small;
+    margin: 10px 0;
+}
+
+.biru, .blue {
+    color: blue;
+}
+.merah, .red {
+    color: red;
+}
+.hijau, .green {
+    color: green;
+}
+.kuning, .yellow {
+    color: yellow;
+}
+.ungu, .purple {
+    color: purple;
+}
+.abu, .grey {
+    color: grey;
+}
+
+.darkblue {
+    color: darkblue;
+}
+
+.miring {
+    font-style: italic;
+}
+
+.kecil {
+    font-size: small;
+}
+
+.wadah {
+    border: solid 1px #ccc;
+    border-radius: 10px;
+    padding: 12px;
+    margin-bottom: 15px;
+}
+
