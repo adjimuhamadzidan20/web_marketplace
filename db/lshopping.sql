@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Waktu pembuatan: 09 Apr 2024 pada 16.39
+-- Waktu pembuatan: 28 Apr 2024 pada 10.04
 -- Versi server: 10.4.17-MariaDB
 -- Versi PHP: 7.4.13
 
@@ -34,14 +34,6 @@ CREATE TABLE `tb_keranjang` (
   `qty` smallint(6) NOT NULL DEFAULT 1
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
---
--- Dumping data untuk tabel `tb_keranjang`
---
-
-INSERT INTO `tb_keranjang` (`id`, `id_user`, `id_produk`, `qty`) VALUES
-(10, 1, 2, 1),
-(11, 1, 3, 4);
-
 -- --------------------------------------------------------
 
 --
@@ -61,11 +53,12 @@ CREATE TABLE `tb_produk` (
 --
 
 INSERT INTO `tb_produk` (`id`, `nama_produk`, `harga`, `gender`, `upload_produk`) VALUES
-(1, 'Kemeja Putih', 5000, 'pria', 'sample_produk.jpg'),
-(2, 'Kemeja Batik', 6000, 'pria', 'sample_produk.jpg'),
-(3, 'Kaos Oblong', 7000, 'pria', 'sample_produk.jpg'),
-(4, 'Celana Jeans', 10000, 'pria', 'sample_produk.jpg'),
-(5, 'Dress Wanita', 12000, 'wanita', 'sample_produk.jpg');
+(17, 'Celana Rok', 50000, 'wanita', '662c8447cf8be.jpg'),
+(19, 'Kemeja Batik', 20000, 'pria', '662c84cf03228.jpg'),
+(20, 'Kaos Polo Pria', 24000, 'pria', '662c851723528.jpg'),
+(21, 'Hijab Pasmina', 15000, 'wanita', '662c8536e5bec.jpg'),
+(22, 'Kaos Kutang', 12000, 'wanita', '662c86304201f.jpg'),
+(23, 'Jaket Sweater', 30000, 'keduanya', '662cd02f7d0ae.jpg');
 
 -- --------------------------------------------------------
 
@@ -88,7 +81,7 @@ CREATE TABLE `tb_user` (
 
 INSERT INTO `tb_user` (`id`, `username`, `password`, `id_role`, `nama_user`, `date_created`) VALUES
 (1, 'admin', 'admin', 1, 'Adji Muhamad Zidan', '2024-04-07 06:21:37'),
-(2, 'pembeli', 'pembeli', 2, 'Pembeli Konsumen', '2024-04-07 10:22:14');
+(2, 'pembeli', 'pembeli', 2, 'Konsumen', '2024-04-07 10:22:14');
 
 --
 -- Indexes for dumped tables
@@ -122,13 +115,13 @@ ALTER TABLE `tb_user`
 -- AUTO_INCREMENT untuk tabel `tb_keranjang`
 --
 ALTER TABLE `tb_keranjang`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=15;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=60;
 
 --
 -- AUTO_INCREMENT untuk tabel `tb_produk`
 --
 ALTER TABLE `tb_produk`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=25;
 
 --
 -- AUTO_INCREMENT untuk tabel `tb_user`

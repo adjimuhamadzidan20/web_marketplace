@@ -1,5 +1,5 @@
 <?php
-    require 'koneksi.php';
+    require 'config/koneksi.php';
 
     if (isset($_POST['login'])) {
         $username = htmlspecialchars($_POST['username']); 
@@ -14,12 +14,10 @@
             $_SESSION['log_username'] = $data['username'];
     
             echo '<script>
-                location.replace("index.php")
+                location.replace("index.php?page=produk")
             </script>';
             
-        } else {
-            $_SESSION['pesan'] = 'Username atau password tidak valid!';
-            
+        } else { 
             echo '<script>
                 location.replace("index.php?page=login")
             </script>';

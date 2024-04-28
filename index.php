@@ -1,8 +1,7 @@
 <?php  
 	session_start();
-	require 'koneksi.php';
-
-	// $_SESSION['log_username'] = 'admin';
+	require 'config/koneksi.php';
+	
 	$username = "";
 	if (isset($_SESSION['log_username'])) {
 		$username = $_SESSION['log_username'];
@@ -54,16 +53,21 @@
 	<header id="header">
     	<?php include('header.php'); ?>
     </header>
-	
+		
     <main>
-		<?php require 'routing.php'; ?>
+		<?php 
+			require 'config/routing.php'; 
+		?>
 	</main>
 	
     <footer>
-        <center>LSHOPPING - <?php echo date("Y"); ?></center>
+    	<div id="footer">
+    		<center>LSHOPPING - <?php echo date("Y"); ?></center>
+    	</div>
 	</footer>
 
 	<script src="vendor/jquery/jquery-3.6.0.js"></script>
+	<script src="vendor/bootstrap-5.3.1-dist/js/bootstrap.bundle.min.js"></script>
 	<script>
 		// validasi input nama produk
 		$('#nama_produk').keyup(function () {
@@ -114,10 +118,7 @@
 
 				// operasi database ajax
 				$.ajax({
-					url: linkAjaxUrl,
-					success: function(hasil) {
-						alert(hasil);
-					}	
+					url: linkAjaxUrl
 				})
 
 				// console.log(id_produk, jumlahItem, capt);
@@ -168,7 +169,11 @@
 			// jumlah total awal
 			$('.qty').change();	
 		})
+
+		// nav mobile responsive
+		$('.ikon-hamburger').click(function() {
+			$('.menu-mobile').slideToggle(300);
+		})
 	</script>
 </body>
-
 </html>
